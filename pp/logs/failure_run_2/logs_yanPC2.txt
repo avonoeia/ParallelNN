@@ -1,0 +1,41 @@
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/yanPC2/experiments/pp/train_pp.py", line 62, in <module>
+[rank1]:     pipe = pipeline(
+[rank1]:   File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/pipelining/_IR.py", line 1230, in pipeline
+[rank1]:     annotate_split_points(module, split_spec)
+[rank1]:   File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/pipelining/_IR.py", line 1184, in annotate_split_points
+[rank1]:     mod_to_wrap = getattr(predecessor_module, atoms[-1])
+[rank1]:   File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1931, in __getattr__
+[rank1]:     raise AttributeError(
+[rank1]: AttributeError: 'ModuleDict' object has no attribute '4'
+[rank1]:[W222 17:26:06.879344294 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+E0222 17:26:06.994232 58630 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 58643) of binary: /home/yanPC2/miniconda3/envs/t1/bin/python
+Traceback (most recent call last):
+  File "/home/yanPC2/miniconda3/envs/t1/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch==2.5.1', 'console_scripts', 'torchrun')())
+  File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/yanPC2/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/yanPC2/experiments/pp/train_pp.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-22_17:26:06
+  host      : administrator-Z690-AORUS-ELITE-AX-DDR4
+  rank      : 1 (local_rank: 0)
+  exitcode  : 1 (pid: 58643)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

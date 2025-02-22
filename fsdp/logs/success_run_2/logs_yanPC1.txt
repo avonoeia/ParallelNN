@@ -1,0 +1,11 @@
+World size from current node: 4
+Number of GPUs in current node: 1
+Rank 0, Local Rank 0, Using GPU 0
+Epoch 0, Batch 0, Loss 2.307607412338257
+Epoch 0, Batch 10, Loss 2.3027548789978027
+Epoch 0, Batch 20, Loss 2.3064651489257812
+Epoch 0, Batch 30, Loss 2.3037543296813965
+Epoch 0, Batch 40, Loss 2.310006618499756
+Epoch 0, Batch 50, Loss 2.298076868057251
+Epoch 0, Batch 60, Loss 2.3044891357421875
+Epoch 0, Batch 70, Loss 2.3022139072418213

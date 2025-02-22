@@ -1,0 +1,3 @@
+World size from current node: 4
+Number of GPUs in current node: 1
+Rank 3, Local Rank 0, Using GPU 0

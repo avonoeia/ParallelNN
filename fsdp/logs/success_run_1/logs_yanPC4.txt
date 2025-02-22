@@ -1,0 +1,18 @@
+World size from current node: 4
+Number of GPUs in current node: 1
+Rank 3, Local Rank 0, Using GPU 0
+[E222 13:14:01.119420121 ProcessGroupNCCL.cpp:542] [Rank 3] Collective WorkNCCL(SeqNum=158, OpType=_REDUCE_SCATTER_BASE, NumelIn=50069512, NumelOut=12517378, Timeout(ms)=600000) raised the following async exception: NCCL error: unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.21.5
+ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+Last error:
+
+Exception raised from checkForNCCLErrorsInternal at /opt/conda/conda-bld/pytorch_1729647327249/work/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:2027 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x719402f6b446 in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::checkForNCCLErrorsInternal(std::shared_ptr<c10d::NCCLComm>&) + 0x220 (0x719398be2bd0 in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkAndSetException() + 0x7c (0x719398be2e1c in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::WorkNCCL::isCompleted() + 0x90 (0x719398be3030 in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1da (0x719398bea7aa in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x719398bec26d in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x145c0 (0x7194043f45c0 in /home/yanPC4/miniconda3/envs/t1/lib/python3.9/site-packages/torch/lib/libtorch.so)
+frame #7: <unknown function> + 0x94ac3 (0x719405094ac3 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x126850 (0x719405126850 in /lib/x86_64-linux-gnu/libc.so.6)
+

@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/home/yanPC3/experiments/pp/train_pp.py", line 6, in <module>
+    from model import Transformer, ModelArgs
+ModuleNotFoundError: No module named 'model'
+E0222 17:24:44.667309 56247 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 56253) of binary: /home/yanPC3/miniconda3/envs/t1/bin/python
+Traceback (most recent call last):
+  File "/home/yanPC3/miniconda3/envs/t1/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch==2.5.1', 'console_scripts', 'torchrun')())
+  File "/home/yanPC3/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/yanPC3/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/home/yanPC3/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/yanPC3/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/yanPC3/miniconda3/envs/t1/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/yanPC3/experiments/pp/train_pp.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-22_17:24:44
+  host      : administrator-Z690-AORUS-ELITE-AX-DDR4
+  rank      : 2 (local_rank: 0)
+  exitcode  : 1 (pid: 56253)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
