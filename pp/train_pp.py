@@ -80,17 +80,19 @@ if __name__ == "__main__":
         return loss_fn(outputs, targets)
 
     stage = pipe.build_stage(stage_index=stage_index, device=rank)
+    print(f"Pipe on node {stage_index}: {pipe.info()}")
     
     schedule = ScheduleGPipe(stage, n_microbatches=num_microbatches, loss_fn=tokenwise_loss_fn)
-    host_rank = int(os.environ["RANK"])
     
-    if host_rank == 0:
+    if stage_index == 0:
         schedule.step(x)
-    elif host_rank == 3:
+    elif stage_index == 3:
         losses = []
         output = schedule.step(target=y, losses=losses)
         print(f"losses: {losses}")
     else:
         schedule.step()
     
+    dist.barrier()
     dist.destroy_process_group()
+    print(f"Rank {stage_index} completes")
