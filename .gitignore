@@ -62,6 +62,7 @@ venv.bak/
 # Logs and databases
 *.log
 *.sqlite
+*/logs
 
 # OS generated files
 .DS_Store
